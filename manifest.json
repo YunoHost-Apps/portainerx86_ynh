@@ -1,6 +1,6 @@
 {
     "name": "Portainer",
-    "id": "example",
+    "id": "portainer",
     "packaging_format": 1,
     "description": {
         "en": "Portainer is a powerful Container Management System designed for organizations starting out on their Kube journey",
@@ -10,7 +10,7 @@
     "url": "https://portainer.io",
     "upstream": {
         "license": "zlib License",
-        "website": "https://example.com",
+        "website": "https://portainer.io",
         "demo": "https://www.portainer.io/book-a-demo",
         "admindoc": "https://github.com/portainer/portainer",
         "userdoc": "https://github.com/portainer/portainer",
