@@ -6,7 +6,7 @@
         "en": "Portainer is a powerful Container Management System designed for organizations starting out on their Kube journey",
         "fr": "Portainer est un puissant système de gestion de conteneurs conçu pour les organisations qui débutent leur parcours Kube"
     },
-    "version": "2.9.3~ynh1",
+    "version": "2.11.1~ynh1",
     "url": "https://portainer.io",
     "upstream": {
         "license": "zlib License",
