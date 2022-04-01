@@ -205,7 +205,7 @@ ynh_add_nginx_config
 #=================================================
 
 #=================================================
-  DEFINE DATA DIRECTORY
+#  DEFINE DATA DIRECTORY
 #=================================================
 ynh_script_progression --message="Defining data directory..." --time --weight=1
 
