@@ -9,9 +9,6 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-# Fix ntp
-bash systemctl restart ntp
-
 #=================================================
 # MANAGE SCRIPT FAILURE
 #=================================================
