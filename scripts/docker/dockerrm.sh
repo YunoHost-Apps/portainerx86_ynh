@@ -12,5 +12,5 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key del -
 sudo apt update
 
 # Images, containers, volumes, or customized configuration files on your host are not automatically removed. To delete all images, containers, and volumes:
-# sudo rm -rf /var/lib/docker
-# sudo rm -rf /var/lib/containerd
+sudo rm -rf /var/lib/docker
+sudo rm -rf /var/lib/containerd
