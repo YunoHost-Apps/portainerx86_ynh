@@ -133,13 +133,13 @@ fi
 ynh_script_progression --message="Removing various files..." --time --weight=1
 
 # Remove a cron file
- ynh_secure_remove --file="/etc/cron.d/$app"
+# ynh_secure_remove --file="/etc/cron.d/$app"
 
 # Remove a directory securely
-ynh_secure_remove --file="/etc/$app"
+# ynh_secure_remove --file="/etc/$app"
 
 # Remove the log files
-ynh_secure_remove --file="/var/log/$app"
+# ynh_secure_remove --file="/var/log/$app"
 
 #=================================================
 # GENERIC FINALIZATION
