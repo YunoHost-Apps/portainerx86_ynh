@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Remove older versions
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
 # Install docker
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 sudo add-apt-repository \
