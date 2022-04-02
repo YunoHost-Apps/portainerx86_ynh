@@ -13,6 +13,7 @@ sudo apt update
 
 # Remove other packs
 sudo apt remove -y dbus-user-session docker-scan-plugin pigz gnupg2 libglib2.0-data libpolkit-agent-1-0 libpolkit-backend-1-0 libpolkit-gobject-1-0 policykit-1
+sudo apt autoremove -y
 
 # Images, containers, volumes, or customized configuration files on your host are not automatically removed. To delete all images, containers, and volumes:
 sudo rm -rf /var/lib/docker
