@@ -1,12 +1,9 @@
 #!/bin/bash
 
 # Undo add-apt-repository and apt-key
-sudo add-apt-repository -r \
-   "deb [arch=amd64] https://download.docker.com/linux/debian \
-   $(lsb_release -cs) \
-   stable"
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key del -
-sudo apt update
+sudo rm /usr/share/keyrings/docker-archive-keyring.gpg
+sudo rm /etc/apt/sources.list.d/docker.list 
+sudo apt-get update
 
 # Remove Docker
 sudo apt-get purge docker-ce docker-ce-cli containerd.io -y
