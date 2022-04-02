@@ -217,8 +217,11 @@ ynh_script_progression --message="Defining data directory..." --time --weight=1
 ###		- Remove the section "RESTORE THE DATA DIRECTORY" in the restore script
 ###     - As well as the section "REMOVE DATA DIR" in the remove script
 
-datadir=/var/lib/docker/volumes/portainer_data
+datadir=/var/lib/docker
+containerd=/var/lib/containerd
 ynh_app_setting_set --app=$app --key=datadir --value=$datadir
+ynh_app_setting_set --app=$app --key=containerd --value=$containerd
+
 
 # mkdir -p $datadir
 
