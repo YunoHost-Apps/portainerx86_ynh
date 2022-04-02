@@ -8,6 +8,7 @@ sudo add-apt-repository \
    stable"
 sudo apt update
 sudo apt -y install docker-ce
+sudo /usr/bin/dockerd -H unix://
 # docker-ce-cli containerd.io
 # sudo systemctl enable --now docker
 sudo usermod -aG docker admin
