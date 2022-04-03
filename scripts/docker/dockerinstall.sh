@@ -14,7 +14,7 @@ sudo apt-get -y install docker-ce
 # sudo systemctl enable --now docker
 
 # Add user to docker group 
-sudo groupadd docker
+# sudo groupadd docker
 sudo usermod -aG docker admin
 sudo newgrp docker 
 
