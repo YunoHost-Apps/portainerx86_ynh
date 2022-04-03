@@ -12,6 +12,7 @@ sudo apt-get purge docker-ce docker-ce-cli containerd.io -y
 rm /etc/docker/key.json
 rm -r /var/run/docker
 rm /var/run/docker.sock
+rm -r /var/run/containerd
 
 # Remove other packs
 # sudo apt remove -y dbus-user-session docker-scan-plugin pigz gnupg2 libglib2.0-data libpolkit-agent-1-0 libpolkit-backend-1-0 libpolkit-gobject-1-0 policykit-1
