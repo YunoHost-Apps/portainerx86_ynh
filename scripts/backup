@@ -30,9 +30,10 @@ app=$YNH_APP_INSTANCE_NAME
 
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 domain=$(ynh_app_setting_get --app=$app --key=domain)
-db_name=$(ynh_app_setting_get --app=$app --key=db_name)
-phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
+# db_name=$(ynh_app_setting_get --app=$app --key=db_name)
+# phpversion=$(ynh_app_setting_get --app=$app --key=phpversion)
 datadir=$(ynh_app_setting_get --app=$app --key=datadir)
+containerd=$(ynh_app_setting_get --app=$app --key=containerd)
 
 #=================================================
 # DECLARE DATA AND CONF FILES TO BACKUP
@@ -55,6 +56,7 @@ ynh_backup --src_path="$final_path"
 #=================================================
 
 ynh_backup --src_path="$datadir" --is_big
+ynh_backup --src_path="$containerd" --is_big
 
 #=================================================
 # BACKUP THE NGINX CONFIGURATION
@@ -66,14 +68,14 @@ ynh_backup --src_path="/etc/nginx/conf.d/$domain.d/$app.conf"
 # BACKUP THE PHP-FPM CONFIGURATION
 #=================================================
 
-ynh_backup --src_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
+# ynh_backup --src_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
 
 #=================================================
 # BACKUP FAIL2BAN CONFIGURATION
 #=================================================
 
-ynh_backup --src_path="/etc/fail2ban/jail.d/$app.conf"
-ynh_backup --src_path="/etc/fail2ban/filter.d/$app.conf"
+# ynh_backup --src_path="/etc/fail2ban/jail.d/$app.conf"
+# ynh_backup --src_path="/etc/fail2ban/filter.d/$app.conf"
 
 #=================================================
 # SPECIFIC BACKUP
@@ -87,7 +89,7 @@ ynh_backup --src_path="/etc/logrotate.d/$app"
 # BACKUP SYSTEMD
 #=================================================
 
-ynh_backup --src_path="/etc/systemd/system/$app.service"
+# ynh_backup --src_path="/etc/systemd/system/$app.service"
 
 #=================================================
 # BACKUP VARIOUS FILES
@@ -97,15 +99,24 @@ ynh_backup --src_path="/etc/cron.d/$app"
 
 ynh_backup --src_path="/etc/$app/"
 
+# More to backup
+ynh_backup --src_path="/etc/docker/key.json"
+ynh_backup --src_path="/var/run/docker"
+ynh_backup --src_path="/var/run/docker.sock"
+ynh_backup --src_path="/var/run/containerd"
+ynh_backup --src_path="/usr/share/keyrings/docker-archive-keyring.gpg"
+ynh_backup --src_path="/etc/apt/sources.list.d/docker.list"
+
+
 #=================================================
 # BACKUP THE MYSQL DATABASE
 #=================================================
-ynh_print_info --message="Backing up the MySQL database..."
+# ynh_print_info --message="Backing up the MySQL database..."
 
 ### (However, things like MySQL dumps *do* take some time to run, though the
 ### copy of the generated dump to the archive still happens later)
 
-ynh_mysql_dump_db --database="$db_name" > db.sql
+# ynh_mysql_dump_db --database="$db_name" > db.sql
 
 #=================================================
 # END OF SCRIPT
