@@ -10,6 +10,7 @@ sudo apt-get update 2> /dev/null
 
 # Install after remove fails because of incomplete uninstall, a second attempt fixes the problem (for now)
 sudo apt-get -y install docker-ce &> /dev/null
+sleep 60
 sudo apt-get -y install docker-ce
 
 # sudo /usr/bin/dockerd -H unix://
