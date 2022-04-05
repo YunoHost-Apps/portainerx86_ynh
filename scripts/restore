@@ -153,6 +153,10 @@ ynh_restore_file --origin_path="/var/run/containerd"
 ynh_restore_file --origin_path="/usr/share/keyrings/docker-archive-keyring.gpg"
 ynh_restore_file --origin_path="/etc/apt/sources.list.d/docker.list"
 
+# Docker compose
+ynh_restore_file --origin_path="/usr/local/bin/docker-compose"
+chmod +x /usr/local/bin/docker-compose
+
 #=================================================
 # RESTORE SYSTEMD
 #=================================================
