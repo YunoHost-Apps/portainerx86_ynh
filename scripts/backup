@@ -113,6 +113,9 @@ ynh_backup --src_path="/var/cache/apt/archives/docker-ce-rootless-extras_5%3a20.
 ynh_backup --src_path="/var/cache/apt/archives/docker-scan-plugin_0.17.0~debian-buster_amd64.deb"
 ynh_backup --src_path="/var/cache/apt/archives/docker-ce-cli_5%3a20.10.14~3-0~debian-buster_amd64.deb"
 
+# Docker Compose
+ynh_backup --src_path="/usr/local/bin/docker-compose"
+
 #=================================================
 # BACKUP THE MYSQL DATABASE
 #=================================================
