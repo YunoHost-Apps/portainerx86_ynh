@@ -165,8 +165,13 @@ chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
 
+ynh_script_progression --message="Installing Docker..." --time --weight=1
 bash docker/dockerinstall.sh
+
+ynh_script_progression --message="Installing Docker Compose..." --time --weight=1
 bash docker/composeinstall.sh
+
+ynh_script_progression --message="Installing Portainer..." --time --weight=1
 bash docker/portainerinstall.sh
 
 #=================================================
