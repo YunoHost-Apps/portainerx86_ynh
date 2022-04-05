@@ -107,6 +107,11 @@ ynh_backup --src_path="/var/run/containerd"
 ynh_backup --src_path="/usr/share/keyrings/docker-archive-keyring.gpg"
 ynh_backup --src_path="/etc/apt/sources.list.d/docker.list"
 
+# Deb files
+ynh_backup --src_path="/var/cache/apt/archives/docker-ce_5%3a20.10.14~3-0~debian-buster_amd64.deb"
+ynh_backup --src_path="/var/cache/apt/archives/docker-ce-rootless-extras_5%3a20.10.14~3-0~debian-buster_amd64.deb"
+ynh_backup --src_path="/var/cache/apt/archives/docker-scan-plugin_0.17.0~debian-buster_amd64.deb"
+ynh_backup --src_path="/var/cache/apt/archives/docker-ce-cli_5%3a20.10.14~3-0~debian-buster_amd64.deb"
 
 #=================================================
 # BACKUP THE MYSQL DATABASE
