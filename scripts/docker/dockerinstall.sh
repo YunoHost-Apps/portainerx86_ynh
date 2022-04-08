@@ -22,4 +22,8 @@ sudo apt-get -y install docker-ce
 sudo usermod -aG docker admin
 sudo newgrp docker 
 
+# Enable docker on boot
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+
 # Logout needed here
