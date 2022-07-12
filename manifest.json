@@ -1,34 +1,32 @@
 {
-    "name": "Example app",
-    "id": "example",
+    "name": "Portainer",
+    "id": "portainer",
     "packaging_format": 1,
     "description": {
-        "en": "Explain in *a few (10~15) words* the purpose of the app or what it actually does (it is meant to give a rough idea to users browsing a catalog of 100+ apps)",
-        "fr": "Expliquez en *quelques* (10~15) mots l'utilité de l'app ou ce qu'elle fait (l'objectif est de donner une idée grossière pour des utilisateurs qui naviguent dans un catalogue de 100+ apps)"
+        "en": "Portainer is a powerful Container Management System designed for organizations starting out on their Kube journey",
+        "fr": "Portainer est un puissant système de gestion de conteneurs conçu pour les organisations qui débutent leur parcours Kube"
     },
-    "version": "1.0~ynh1",
-    "url": "https://example.com",
+    "version": "2.11.1~ynh1",
+    "url": "https://portainer.io",
     "upstream": {
-        "license": "free",
-        "website": "https://example.com",
-        "demo": "https://demo.example.com",
-        "admindoc": "https://yunohost.org/packaging_apps",
-        "userdoc": "https://yunohost.org/apps",
-        "code": "https://some.forge.com/example/example"
+        "license": "zlib License",
+        "website": "https://portainer.io",
+        "demo": "https://www.portainer.io/book-a-demo",
+        "admindoc": "https://github.com/portainer/portainer",
+        "userdoc": "https://github.com/portainer/portainer",
+        "code": "https://github.com/portainer/portainer"
     },
-    "license": "free",
+    "license": "zlib License",
     "maintainer": {
-        "name": "John doe",
-        "email": "john.doe@example.com"
+        "name": "jarod5001",
+        "email": ""
     },
     "requirements": {
         "yunohost": ">= 4.3.0"
     },
-    "multi_instance": true,
+    "multi_instance": false,
     "services": [
-        "nginx",
-        "php7.3-fpm",
-        "mysql"
+        "nginx"
     ],
     "arguments": {
         "install" : [
@@ -39,35 +37,13 @@
             {
                 "name": "path",
                 "type": "path",
-                "example": "/example",
-                "default": "/example"
+                "example": "/portainer",
+                "default": "/portainer"
             },
             {
                 "name": "is_public",
                 "type": "boolean",
                 "default": true
-            },
-            {
-                "name": "language",
-                "type": "string",
-                "ask": {
-                    "en": "Choose the application language",
-                    "fr": "Choisissez la langue de l'application"
-                },
-                "choices": ["fr", "en"],
-                "default": "fr"
-            },
-            {
-                "name": "admin",
-                "type": "user"
-            },
-            {
-                "name": "password",
-                "type": "password",
-                "help": {
-                    "en": "Use the help field to add an information for the admin about this question.",
-                    "fr": "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
-                }
             }
         ]
     }
